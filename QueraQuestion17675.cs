@@ -2,6 +2,10 @@
 
 namespace CW1
 {
+    /// <summary>
+    /// Solves the question <c>17675</c> in quera.
+    /// For more info visit: https://quera.org/problemset/17675/
+    /// </summary>
     public class QueraQuestion17675
     {
         static int previousFib = 0;
