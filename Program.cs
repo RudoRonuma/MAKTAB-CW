@@ -11,7 +11,10 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        QueraQuestion17675.Main(args);
+        //QueraQuestion17675.QueraMain(args);
+
+        int[] numbers = new int[5] { 8, 8, 4, 2, 7 };
+        Console.WriteLine(numbers[1] + numbers[2] / numbers[3]);
     }
 
 

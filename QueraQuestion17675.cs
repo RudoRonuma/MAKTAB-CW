@@ -10,7 +10,7 @@ namespace CW1
     {
         static int previousFib = 0;
         static int lastFib = 1;
-        public static void Main(string[] args)
+        public static void QueraMain(string[] args)
         {
             var theNumber = Convert.ToInt32(Console.ReadLine());
             var totalStr = "";
