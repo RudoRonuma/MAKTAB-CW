@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 
-namespace CW1.Thursday
+namespace CW.CW1.Thursday
 {
-    internal class ThursdayCW
+    public class ThursdayCW
     {
-
+        [Fact]
         public static void Question1()
         {
             var strValue1 = Console.ReadLine();
@@ -17,6 +18,7 @@ namespace CW1.Thursday
             Console.WriteLine(strValue1 == strValue2);
         }
 
+        [Fact]
         public static void Question2()
         {
             float floatInput1 = Convert.ToSingle(Console.ReadLine());
@@ -26,6 +28,7 @@ namespace CW1.Thursday
             Console.WriteLine(floatInput2 * floatInput2 * floatInput2);
         }
 
+        [Fact]
         public static void Question3()
         {
             var num1 = Convert.ToInt32(Console.ReadLine());
@@ -40,6 +43,7 @@ namespace CW1.Thursday
             Console.WriteLine(average % 2 == 0);
         }
 
+        [Fact]
         public static void Question3WithTryParse()
         {
             if (!int.TryParse(Console.ReadLine(), out int num1))
@@ -59,6 +63,7 @@ namespace CW1.Thursday
             Console.WriteLine(average % 2 == 0);
         }
 
+        [Fact]
         public static void Question4()
         {
             var monthNum = Convert.ToInt32(Console.ReadLine());
@@ -67,6 +72,7 @@ namespace CW1.Thursday
             Console.WriteLine((monthNum * 30) + currentDay);
         }
 
+        [Fact]
         public static void Question5()
         {
             bool booleanValue = Convert.ToBoolean(Console.ReadLine());
@@ -75,6 +81,7 @@ namespace CW1.Thursday
         }
 
 
+        [Fact]
         public static void Question6()
         {
             Console.WriteLine("Enter first num:");

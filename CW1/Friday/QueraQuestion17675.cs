@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CW1
+namespace CW.CW1.Friday
 {
     /// <summary>
     /// Solves the question <c>17675</c> in quera.
@@ -31,7 +31,7 @@ namespace CW1
             var f1 = lastFib;
             int f2;
 
-            for (int i = f1; i <= theNum; i++) 
+            for (int i = f1; i <= theNum; i++)
             {
                 f2 = f1 + f0;
                 f0 = f1;

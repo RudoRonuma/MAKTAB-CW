@@ -1,1 +1,1 @@
-The CW1 project.
+The CW project.
