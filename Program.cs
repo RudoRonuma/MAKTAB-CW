@@ -5,6 +5,7 @@
 //Question5();
 //Question6();
 
+using CW.CW2.Friday;
 using CW.CW2.Thursday;
 
 namespace CW
@@ -14,8 +15,10 @@ namespace CW
         public static void Main(string[] args)
         {
             //ThursdayCW.Question2(Console.ReadLine());
-            
-            ThursdayCW.Question3();
+
+            //ThursdayCW.Question3();
+            ThursdayCW.Question4();
+            //BinarySearching.StartGettingInputs();
         }
     }
 }

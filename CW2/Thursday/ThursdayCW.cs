@@ -250,7 +250,62 @@ namespace CW.CW2.Thursday
         [Fact]
         public static void Question4()
         {
+            var userInputs = Console.ReadLine()!.Split(new string[] { ",", " " }, StringSplitOptions.RemoveEmptyEntries);
+            var arrayInt = new int[userInputs.Length];
+            int? minValue = null;
+            int? maxValue = null;
+            for (int i = 0; i < userInputs.Length; i++)
+            {
+                arrayInt[i] = Convert.ToInt32(userInputs[i]);
+                if (minValue == null || arrayInt[i] < minValue)
+                {
+                    minValue = arrayInt[i];
+                } 
+                if (maxValue == null || arrayInt[i] > maxValue)
+                {
+                    maxValue = arrayInt[i];
+                }
+            }
 
+            Console.WriteLine($"Minimum: {minValue}, Maximum: {maxValue}");
+
+            int[] sortedArray = BubbleSort(arrayInt);
+            Console.WriteLine(string.Join(',', sortedArray));
+
+            // finding the duplicate number:
+            // using arrays only
+            int[] duplicateNums = new int[(int)maxValue + 1];
+            for (int i = 0; i < arrayInt.Length; i++)
+            {
+                duplicateNums[arrayInt[i] - 1]++;
+            }
+            Console.WriteLine(duplicateNums);
+
+            Dictionary<int, int> countOfAppearance = new();
+            for (int i = 0; i < arrayInt.Length; i++)
+            {
+                countOfAppearance[arrayInt[i]]++;
+            }
+            Console.WriteLine(countOfAppearance);
+        }
+
+        [Theory]
+        [InlineData(10, 8, 20, 12, 80, 40, 37)]
+        public static int[] BubbleSort(params int[] arrayInt)
+        {
+            int[] sortedArray = new int[arrayInt.Length];
+            arrayInt.CopyTo(sortedArray, 0);
+            for (int j = 0; j <= sortedArray.Length - 2; j++)
+            {
+                for (int i = 0; i <= sortedArray.Length - 2; i++)
+                {
+                    if (sortedArray[i] > sortedArray[i + 1])
+                    {
+                        (sortedArray[i], sortedArray[i + 1]) = (sortedArray[i + 1], sortedArray[i]);
+                    }
+                }
+            }
+            return sortedArray;
         }
 
         [Fact]
