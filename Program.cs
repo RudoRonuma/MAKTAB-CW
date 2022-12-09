@@ -17,7 +17,9 @@ namespace CW
             //ThursdayCW.Question2(Console.ReadLine());
 
             //ThursdayCW.Question3();
-            ThursdayCW.Question4();
+            //ThursdayCW.Question4();
+            //FridayCW.Question4();
+            FridayCW.Question5();
             //BinarySearching.StartGettingInputs();
         }
     }

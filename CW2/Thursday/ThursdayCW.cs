@@ -250,13 +250,12 @@ namespace CW.CW2.Thursday
         [Fact]
         public static void Question4()
         {
-            var userInputs = Console.ReadLine()!.Split(new string[] { ",", " " }, StringSplitOptions.RemoveEmptyEntries);
-            var arrayInt = new int[userInputs.Length];
+            var arrayInt = GetIntArrayInput();
             int? minValue = null;
             int? maxValue = null;
-            for (int i = 0; i < userInputs.Length; i++)
+            for (int i = 0; i < arrayInt.Length; i++)
             {
-                arrayInt[i] = Convert.ToInt32(userInputs[i]);
+                arrayInt[i] = Convert.ToInt32(arrayInt[i]);
                 if (minValue == null || arrayInt[i] < minValue)
                 {
                     minValue = arrayInt[i];
@@ -270,16 +269,26 @@ namespace CW.CW2.Thursday
             Console.WriteLine($"Minimum: {minValue}, Maximum: {maxValue}");
 
             int[] sortedArray = BubbleSort(arrayInt);
-            Console.WriteLine(string.Join(',', sortedArray));
+            Console.WriteLine("Sorted array is: " + string.Join(',', sortedArray));
 
             // finding the duplicate number:
             // using arrays only
+            // [1, 1, 1, 2, 40]
             int[] duplicateNums = new int[(int)maxValue + 1];
             for (int i = 0; i < arrayInt.Length; i++)
             {
                 duplicateNums[arrayInt[i] - 1]++;
             }
-            Console.WriteLine(duplicateNums);
+
+            for (int i = 0; i < duplicateNums.Length; i++)
+            {
+                if (duplicateNums[i] == 0)
+                    continue;
+
+                Console.WriteLine($"{i+1}: {duplicateNums[i]}");
+            }
+            Console.WriteLine();
+            //--------------------------------------------------
 
             Dictionary<int, int> countOfAppearance = new();
             for (int i = 0; i < arrayInt.Length; i++)
@@ -287,7 +296,27 @@ namespace CW.CW2.Thursday
                 countOfAppearance[arrayInt[i]]++;
             }
             Console.WriteLine(countOfAppearance);
+            //--------------------------------------------------
+
+            var secondInput = GetIntArrayInput();
+            Console.Write("Common values are: ");
+            foreach (var itemFromSecondInput in secondInput)
+            {
+                foreach (var itemFromFirstInput in arrayInt)
+                {
+                    if (itemFromFirstInput == itemFromSecondInput)
+                    {
+                        Console.Write(itemFromFirstInput + ",");
+                    }
+                }
+            }
         }
+
+        private static int[] GetIntArrayInput() =>
+            Console.ReadLine()!.Split(
+                new string[] { ",", " " }, 
+                StringSplitOptions.RemoveEmptyEntries)
+            .Select(value => Convert.ToInt32(value)).ToArray();
 
         [Theory]
         [InlineData(10, 8, 20, 12, 80, 40, 37)]
