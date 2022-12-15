@@ -75,6 +75,6 @@ namespace CW.CW3.Thursday
         }
 
         private static MathematicEnum? GetMathematicEnum(string value) =>
-            Enum.Parse(typeof(MathematicEnum?), value) as MathematicEnum;
+            Enum.Parse(typeof(MathematicEnum?), value) as MathematicEnum?;
     }
 }

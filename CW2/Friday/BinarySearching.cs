@@ -56,7 +56,7 @@ namespace CW.CW2.Friday
                     Console.WriteLine("Write all numbers: ");
                     userInputs = Console.ReadLine()!.Split(new string[] { ",", " " }, StringSplitOptions.RemoveEmptyEntries);
                 }
-                int[] allNumbers = userInputs.Select((value) => Convert.ToInt32(value)).ToArray();
+                int[] allNumbers = userInputs.Select(value => Convert.ToInt32(value)).ToArray();
                 if (targetNum == 0)
                 {
                     Console.WriteLine("Give the number to find: ");

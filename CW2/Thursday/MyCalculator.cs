@@ -9,15 +9,15 @@ namespace CW.CW2.Thursday
     internal class MyCalculator
     {
         public int Sum(params int[] values) =>
-            DoOperation((left, right) => { return left + right; }, values);
+            DoOperation((left, right) => left + right, values);
 
         public int Minus(params int[] values) =>
-            DoOperation((left, right) => { return left - right; }, values);
+            DoOperation((left, right) => left - right, values);
 
         public int Multiply(params int[] values) =>
-            DoOperation((left, right) => { return left * right; }, values);
+            DoOperation((left, right) => left * right, values);
         public double Division(params double[] values) =>
-            DoOperation((left, right) => { return left / right; }, values);
+            DoOperation((left, right) => left / right, values);
 
         public double CalculateWhole(string wholeInput)
         {
@@ -53,9 +53,9 @@ namespace CW.CW2.Thursday
                 {
                     var multipleSentences = sentences.Split(" * ");
                     var doubleValues = multipleSentences.Select(
-                        (value) => { return Convert.ToDouble(value); }) as double[];
+                        value =>  Convert.ToDouble(value)) as double[];
                     innerResult = DoOperation(
-                        (left, right) => { return left * right; }, doubleValues);
+                        (left, right) => left * right, doubleValues);
                 }
                 else
                 {
