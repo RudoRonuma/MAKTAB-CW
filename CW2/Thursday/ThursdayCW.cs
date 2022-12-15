@@ -324,9 +324,9 @@ namespace CW.CW2.Thursday
         {
             int[] sortedArray = new int[arrayInt.Length];
             arrayInt.CopyTo(sortedArray, 0);
-            for (int j = 0; j <= sortedArray.Length - 2; j++)
+            for (int j = 0; j < sortedArray.Length - 1; j++)
             {
-                for (int i = 0; i <= sortedArray.Length - 2; i++)
+                for (int i = 0; i < sortedArray.Length - 1; i++)
                 {
                     if (sortedArray[i] > sortedArray[i + 1])
                     {
