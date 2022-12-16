@@ -26,7 +26,8 @@ namespace CW
             //    }
             //);
 
-            CW3.Thursday.ThursdayCW.Question1C(null, null);
+            //CW3.Thursday.ThursdayCW.Question1C(null, null);
+            CW3.Friday.FridayCW.Question3();
         }
     }
 }
